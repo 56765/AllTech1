@@ -14,7 +14,11 @@ d=0
 pygame.draw.line(screen,white,(200,0),(200,600))
 pygame.draw.line(screen,white,(400,0),(400,600))
 pygame.draw.line(screen,white,(0,200),(600,200))
-pygame.draw.line(screen,white,(0,400),(600,400)) 
+pygame.draw.line(screen,white,(0,400),(600,400))
+def show_text(msg,x,y,color):
+        fontobj=pygame.font.SysFont('freesans',32)
+        msgobj=fontobj.render(msg,False,color)
+        screen.blit(msgobj,(x,y))
 def X1():
         pygame.draw.line(screen,white,(0,200),(200,0))
         pygame.draw.line(screen,white,(200,200),(0,0))
@@ -61,8 +65,17 @@ def C8():
 def C9():
         pygame.draw.circle(screen,white,(500,500),100,1)
 def cw():
-    if d[1]==d[2]==d[3]=='x' or d[4]==d[5]==d[6]=='x' or d[7]==d[8]==d[9]=='x' or d[1]==d[4]==d[7]=='x' or d[2]==d[5]==d[8]=='x' or d[3]==d[6]==d[9]=='x' or d[1]==d[5]==d[9]=='x':
-        print('x wins')
+        if d[1]==d[2]==d[3]=='x' or d[4]==d[5]==d[6]=='x' or d[7]==d[8]==d[9]=='x' or d[1]==d[4]==d[7]=='x' or d[2]==d[5]==d[8]=='x' or d[3]==d[6]==d[9]=='x' or d[1]==d[5]==d[9]=='x':
+                print('x wins')
+                quit()
+        elif d[1]==d[2]==d[3]=='o' or d[4]==d[5]==d[6]=='o' or d[7]==d[8]==d[9]=='o' or d[1]==d[4]==d[7]=='o' or d[2]==d[5]==d[8]=='o' or d[3]==d[6]==d[9]=='o' or d[1]==d[5]==d[9]=='o':
+                print('O wins')
+                quit()
+        elif d[1] !="_" and d[2] !="_" and d[3] !="_" and d[4] !="_" and d[5] !="_" and d[6] !="_" and d[7] !="_" and d[8] !="_" and d[9] !="_":
+                print('draw')
+                quit()
+        
+
        
         
 
@@ -179,6 +192,7 @@ while True:
                     C9()
                     player=0
                     d[9]='o'
+                    
 
 
                         
