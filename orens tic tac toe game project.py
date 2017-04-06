@@ -1,4 +1,4 @@
-
+import time
 import pygame
 from pygame.locals import*
 pygame.init()
@@ -17,7 +17,9 @@ def show_text(msg,x,y,color):
         msgobj=fontobj.render(msg,False,color)
         screen.blit(msgobj,(x,y))
 def menu():
-        global x
+        time.sleep(3)
+        screen.fill(black)
+        global x,y
 
         while True:
                 pygame.draw.rect(screen,red,(50,200,200,200))
@@ -37,10 +39,14 @@ def menu():
                 if x in range(50,250) and y in range(200,400):
                         print('playClicked')
                         game()
+
+                        
                 elif x in range(350,550) and y in range(200,400):
                         quit()
                 pygame.display.update()
+                
 def game():
+        screen.fill(black)
         pygame.draw.line(screen,white,(200,0),(200,600))
         pygame.draw.line(screen,white,(400,0),(400,600))
         pygame.draw.line(screen,white,(0,200),(600,200))
@@ -97,17 +103,19 @@ def game():
                         print('x wins')
                         show_text('X Wins',268,268,blue)
                         pygame.display.update()
-                        quit()
+                        menu()
+##                      menu()
+                        return        
                 elif d[1]==d[2]==d[3]=='o' or d[4]==d[5]==d[6]=='o' or d[7]==d[8]==d[9]=='o' or d[1]==d[4]==d[7]=='o' or d[2]==d[5]==d[8]=='o' or d[3]==d[6]==d[9]=='o' or d[1]==d[5]==d[9]=='o':
                         print('O wins')
                         show_text('O Wins',268,268,blue)
                         pygame.display.update()
-                        quit()
+                        menu()
                 elif d[1] !="_" and d[2] !="_" and d[3] !="_" and d[4] !="_" and d[5] !="_" and d[6] !="_" and d[7] !="_" and d[8] !="_" and d[9] !="_":
                         print('draw')
                         show_text('Draw',268,268,blue)
                         pygame.display.update()
-                        quit()
+                        menu()
                 
 
                
