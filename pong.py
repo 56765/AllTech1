@@ -21,36 +21,49 @@ blue=(0,0,255)
 white=(255,255,255)
 black=(0,0,0)
 color=(255,0,0)
+aa=0
+oo=0
+ww=0
+ss=0
+ll=0
 while True:
-    pygame.display.update()
+    screen.fill(black)
+
     for event in pygame.event.get():
         if event.type==QUIT:
             pygame.quit()
             exit()
         if event.type==KEYDOWN:
              if event.key == K_l:
-                 lc=2
+                aa=1
              if event.key == K_o:
-                 lc=-2
+                 oo=1
              if event.key == K_s:
-                 v=2
+                 ss=1
              if event.key == K_w:
-                 v=-2
-        
+                 ww=1
         if event.type==KEYUP:
              if  event.key==K_l:
-                 lc=0
+                aa=0
              if event.key==K_o:
-                 lc=0
+##                 print('hi')
+                 oo=0
              if  event.key==K_s:
-                 v=0
+                ss=0
              if event.key==K_w:
-                 v=0
-                
-    vc=vc+v
-    l=l+lc          
+                 ww=0
+    if aa==1 and ll<600:
+        ll=ll+2
+    if oo==1 and ll>0:
+        ll=ll-2
+    if ss==1 and vc<600:
+        vc=vc+2
+    if ww==1 and vc>0:
+        vc=vc-2
+        
 
-    screen.fill(black)
+
+
     pygame.draw.circle(screen,blue,(x,y),50)
     x+=xc
     y+=yc
@@ -62,10 +75,9 @@ while True:
         xc=random.randint(1,2)
     if y<=0:
        yc=random.randint(1,2)
-    pygame.draw.rect(screen,red,(800,l,100,200))
-    pygame.draw.rect(screen,red,(0,vc,100,200))
-   
-   
+    pygame.draw.rect(screen,red,(750,ll,50,200))
+    pygame.draw.rect(screen,red,(0,vc,50,200))
+    pygame.display.update()
     
 
         
