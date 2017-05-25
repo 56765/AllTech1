@@ -26,6 +26,9 @@ oo=0
 ww=0
 ss=0
 ll=0
+xp=750
+yp=0
+        
 while True:
     screen.fill(black)
 
@@ -60,11 +63,12 @@ while True:
         vc=vc+2
     if ww==1 and vc>0:
         vc=vc-2
-        
+
 
 
 
     pygame.draw.circle(screen,blue,(x,y),50)
+    print(x,y)
     x+=xc
     y+=yc
     if x>=750:
@@ -75,8 +79,12 @@ while True:
         xc=random.randint(1,2)
     if y<=0:
        yc=random.randint(1,2)
-    pygame.draw.rect(screen,red,(750,ll,50,200))
-    pygame.draw.rect(screen,red,(0,vc,50,200))
+    pygame.draw.rect(screen,red,(xp,ll,50,200))
+    pygame.draw.rect(screen,red,(yp,vc,50,200))
+    if(xc+50) in range (xp,50) and (yc+50) in range (yp,200):
+        xc=-1
+        xy=-1
+    
     pygame.display.update()
     
 
