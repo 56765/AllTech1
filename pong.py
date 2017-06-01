@@ -68,22 +68,18 @@ while True:
 
 
     pygame.draw.circle(screen,blue,(x,y),50)
-    print(x,y)
     x+=xc
     y+=yc
-    if x>=750:
+    if x>=700 and ll<=y<=ll+200:
        xc=-random.randint(1,2)
-    if y>=750:
+    if x>=700 and vc<=y<=vc+200:
         yc=-random.randint(1,2)
-    if x<=0:
+    if x<=50:
         xc=random.randint(1,2)
-    if y<=0:
+    if y<=50:
        yc=random.randint(1,2)
     pygame.draw.rect(screen,red,(xp,ll,50,200))
     pygame.draw.rect(screen,red,(yp,vc,50,200))
-    if(xc+50) in range (xp,50) and (yc+50) in range (yp,200):
-        xc=-1
-        xy=-1
     
     pygame.display.update()
     
