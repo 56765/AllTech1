@@ -1,3 +1,4 @@
+
 import time
 import random
 import pygame
@@ -63,7 +64,10 @@ while True:
         vc=vc+2
     if ww==1 and vc>0:
         vc=vc-2
-
+    if x >900 or x<0:
+        x=400
+        y=400
+       
 
 
 
@@ -72,13 +76,15 @@ while True:
     y+=yc
     if x>=700 and ll<=y<=ll+200:
        xc=-random.randint(1,2)
-    if x>=700 and vc<=y<=vc+200:
-        yc=-random.randint(1,2)
-    if x<=50:
+    if x<=20 and vc<=y<=vc+200:
         xc=random.randint(1,2)
+    if y>=750:
+        yc=-random.randint(1,2)
     if y<=50:
        yc=random.randint(1,2)
-    pygame.draw.rect(screen,red,(xp,ll,50,200))
+
+
+    pygame.draw.rect(screen,green,(xp,ll,50,200))
     pygame.draw.rect(screen,red,(yp,vc,50,200))
     
     pygame.display.update()
