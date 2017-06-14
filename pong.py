@@ -29,6 +29,12 @@ ss=0
 ll=0
 xp=750
 yp=0
+benny=0
+timmy=0
+def show_text(msg,x,y,color):
+    fontobj=pygame.font.SysFont("freesans",32)
+    msgobj=fontobj.render(msg,False,color)
+    screen.blit(msgobj,(x,y))
         
 while True:
     screen.fill(black)
@@ -64,9 +70,17 @@ while True:
         vc=vc+2
     if ww==1 and vc>0:
         vc=vc-2
-    if x >900 or x<0:
+    if x >900 :
         x=400
         y=400
+        benny=benny+1
+    show_text(str(benny),100,700,white)
+    if x<0:
+        x=400
+        y=400
+        timmy=timmy+1
+    show_text(str(timmy),100,700,white)
+        
        
 
 
@@ -76,7 +90,7 @@ while True:
     y+=yc
     if x>=700 and ll<=y<=ll+200:
        xc=-random.randint(1,2)
-    if x<=20 and vc<=y<=vc+200:
+    if x<=100 and vc<=y<=vc+200:
         xc=random.randint(1,2)
     if y>=750:
         yc=-random.randint(1,2)
