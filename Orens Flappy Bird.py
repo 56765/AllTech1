@@ -14,9 +14,18 @@ yellow=(255,240,6)
 x=400
 y=400
 yc=1
+bn=350
+nb=350
+vb=0
+bv=750
 yr=random.randint(550,800)
 xr=random.randint(0,450)
+def pipes():
+    pygame.draw.rect(screen,green,(nb,vb,50,xr))
+    pygame.draw.rect(screen,green,(bn,bv,50,yr))
 while True:
+    pygame.draw.rect(screen,green,(nb,0,50,xr))
+    pygame.draw.rect(screen,green,(bn,750,50,yr))
     
     pygame.draw.circle(screen,yellow,(x,y),25)
     for event in pygame.event.get():
@@ -27,16 +36,27 @@ while True:
         if event.type==KEYUP:
             yc=1
     y=y+yc
-    pygame.draw.rect(screen,green,(350,0,50,xr))
-    pygame.draw.rect(screen,green,(350,750,50,yr))
 
-     
+    bn=bn-5
+    nb=nb-5
+ 
+    if nb==0 and bn==0:
+        nb=850
+        bn=850
+        yr=random.randint(550,800)
+        xr=random.randint(0,450)
 
+        
+        
 
+    
+        
 
-
+  
     pygame.display.update()
     screen.fill(black)
+
+    
     
     
     
