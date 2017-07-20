@@ -28,16 +28,19 @@ def everything():
     bv=750
 
 
-        
+    tep=random.randint(500,800) 
     yr=random.randint(550,800)
     xr=random.randint(0,450)
-    def pipes():
-        pygame.draw.rect(screen,green,(nb,vb,50,xr))
-        pygame.draw.rect(screen,green,(bn,bv,50,yr))
     while True:
-        pygame.draw.rect(screen,green,(nb,0,50,xr))
-        pygame.draw.rect(screen,green,(bn,750,50,yr))
-        
+        screen.fill(black)
+        tep=random.randint(500,800)
+        xr=random.randint(0,450)
+        pygame.draw.rect(screen,yellow,(nb,0,25,xr+50))
+        pygame.draw.rect(screen,red,(nb-30,0,25,xr+50))
+        pygame.draw.rect(screen,yellow,(bn,tep+50,25,yr))
+        pygame.draw.rect(screen,red,(bn-35,tep+50,25,yr))
+        pygame.draw.rect(screen,yellow,(nb+30,0,25,xr))
+        pygame.draw.rect(screen,red,(bn+30,tep,25,yr))
         pygame.draw.circle(screen,yellow,(x,y),25)
         for event in pygame.event.get():
           
@@ -55,13 +58,17 @@ def everything():
             nb=850
             bn=850
             yr=random.randint(550,800)
-            xr=random.randint(0,450)
+            
+            
         if y<=0 or y>=800:
             everything()
-everything()
+        if x+25==nb and y in range(0,10):
+            everything()
+        pygame.display.update()
+everything()  
             
-pygame.display.update()
-screen.fill(black)
+
+   
 
     
     
