@@ -11,8 +11,13 @@ blue=(0,0,255)
 white=(255,255,255)
 black=(0,0,0)
 yellow=(255,240,6)
+score=0
 
 
+def show_text(msg,x,y,color):
+    fontobj=pygame.font.SysFont('freesans',32)
+    msgobj=fontobj.render(msg,False,color)
+    screen.blit(msgobj,(x,y))
 
 
 def everything():
@@ -31,8 +36,16 @@ def everything():
     tep=random.randint(500,800) 
     yr=random.randint(550,800)
     xr=random.randint(0,450)
+    tim=time.time()
     while True:
         screen.fill(black)
+        
+      
+
+      
+        
+
+      
         tep=random.randint(500,800)
         xr=random.randint(0,450)
         pygame.draw.rect(screen,yellow,(nb,0,25,xr+50))
@@ -64,7 +77,15 @@ def everything():
             everything()
         if x+25==nb and y in range(0,10):
             everything()
+##        show_text(blah,750,50,blue)
+        cor=time.time()-tim
+        cor = int(cor)
+        show_text(str(cor), 750,50, blue)
+        if((x+y==xr)) and ((y>yr and xr and xr<y+y)):
+            everything()
         pygame.display.update()
+
+        
 everything()  
             
 

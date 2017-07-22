@@ -79,7 +79,11 @@ while True:
         x=400
         y=400
         timmy=timmy+1
-    show_text(str(timmy),100,700,white)
+    show_text(str(timmy),700,700,white)
+    if benny or timmy==20:
+        benny=0 
+        timmy=0
+    
         
        
 
@@ -88,7 +92,7 @@ while True:
     pygame.draw.circle(screen,blue,(x,y),50)
     x+=xc
     y+=yc
-    if x>=700 and ll<=y<=ll+200:
+    if x>=700 and y-50<=y<=y+200:
        xc=-random.randint(1,2)
     if x<=100 and vc<=y<=vc+200:
         xc=random.randint(1,2)
@@ -98,7 +102,7 @@ while True:
        yc=random.randint(1,2)
 
 
-    pygame.draw.rect(screen,green,(xp,ll,50,200))
+    pygame.draw.rect(screen,green,(xp,y-50,50,200))
     pygame.draw.rect(screen,red,(yp,vc,50,200))
     
     pygame.display.update()
