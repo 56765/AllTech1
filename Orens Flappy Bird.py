@@ -48,11 +48,11 @@ def everything():
       
         tep=random.randint(500,800)
         xr=random.randint(0,450)
-        pygame.draw.rect(screen,yellow,(nb,0,25,xr+50))
-        pygame.draw.rect(screen,red,(nb-30,0,25,xr+50))
-        pygame.draw.rect(screen,yellow,(bn,tep+50,25,yr))
-        pygame.draw.rect(screen,red,(bn-35,tep+50,25,yr))
-        pygame.draw.rect(screen,yellow,(nb+30,0,25,xr))
+        pygame.draw.rect(screen,yellow,(nb,0,25,xr+25))
+        pygame.draw.rect(screen,red,(nb-30,0,25,xr+25))
+        pygame.draw.rect(screen,yellow,(bn,tep+25,25,yr))
+        pygame.draw.rect(screen,red,(bn-35,tep+25,25,yr))
+        pygame.draw.rect(screen,yellow,(nb+30,0,25,xr+25))
         pygame.draw.rect(screen,red,(bn+30,tep,25,yr))
         pygame.draw.circle(screen,yellow,(x,y),25)
         for event in pygame.event.get():
@@ -81,8 +81,11 @@ def everything():
         cor=time.time()-tim
         cor = int(cor)
         show_text(str(cor), 750,50, blue)
-        if((x+y==xr)) and ((y>yr and xr and xr<y+y)):
+        if((x+50==bn)) and ((y>yr and y<yr+xr)):
+            print("Collision")
             everything()
+
+            
         pygame.display.update()
 
         
