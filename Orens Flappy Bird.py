@@ -13,7 +13,6 @@ black=(0,0,0)
 yellow=(255,240,6)
 score=0
 
-
 def show_text(msg,x,y,color):
     fontobj=pygame.font.SysFont('freesans',32)
     msgobj=fontobj.render(msg,False,color)
@@ -29,14 +28,18 @@ def everything():
     nb=350
 
 
+
     vb=0
     bv=750
 
-
+    pu=0
     tep=random.randint(500,800) 
     yr=random.randint(550,800)
     xr=random.randint(0,450)
     tim=time.time()
+
+
+    
     while True:
         screen.fill(black)
         
@@ -46,13 +49,13 @@ def everything():
         
 
       
-        tep=random.randint(500,800)
-        xr=random.randint(0,450)
-        pygame.draw.rect(screen,yellow,(nb,0,25,xr+25))
-        pygame.draw.rect(screen,red,(nb-30,0,25,xr+25))
-        pygame.draw.rect(screen,yellow,(bn,tep+25,25,yr))
-        pygame.draw.rect(screen,red,(bn-35,tep+25,25,yr))
-        pygame.draw.rect(screen,yellow,(nb+30,0,25,xr+25))
+##        tep=random.randint(500,800)
+##        xr=random.randint(0,450)
+        pygame.draw.rect(screen,yellow,(nb,pu,25,xr+25))
+##        pygame.draw.rect(screen,red,(nb-30,0,25,xr+25))
+##        pygame.draw.rect(screen,yellow,(bn,tep+25,25,yr))
+##        pygame.draw.rect(screen,red,(bn-35,tep+25,25,yr))
+##        pygame.draw.rect(screen,yellow,(nb+30,0,25,xr+25))
         pygame.draw.rect(screen,red,(bn+30,tep,25,yr))
         pygame.draw.circle(screen,yellow,(x,y),25)
         for event in pygame.event.get():
@@ -71,6 +74,8 @@ def everything():
             nb=850
             bn=850
             yr=random.randint(550,800)
+            tep=random.randint(500,800)
+            xr=random.randint(0,450)
             
             
         if y<=0 or y>=800:
@@ -81,10 +86,31 @@ def everything():
         cor=time.time()-tim
         cor = int(cor)
         show_text(str(cor), 750,50, blue)
-        if((x+50==bn)) and ((y>yr and y<yr+xr)):
-            print("Collision")
-            everything()
+##        if((x+50==nb)) and ((y>yr and y<yr+xr+25)):
+##            print("Collision")
+##            everything()
+        if ((x+25)==(nb)) and (y>pu and (y<(pu+(xr+25)))):
+            print("Up Collison")
+            while True:
+                screen.fill(black)
+                y=y+2
+                pygame.draw.circle(screen,yellow,(x,y),25)
+                pygame.draw.rect(screen,yellow,(nb,pu,25,xr+25))
+                pygame.draw.rect(screen,red,(bn+30,tep,25,yr))
 
+                pygame.display.update()
+                
+        if (((x+25) == (bn+30)) and (y>tep and (y<(tep+yr)))):
+            print("Down Collision")
+            while True:
+                screen.fill(black)
+                y=y+2
+                pygame.draw.circle(screen,yellow,(x,y),25)
+                pygame.draw.rect(screen,yellow,(nb,pu,25,xr+25))
+                pygame.draw.rect(screen,red,(bn+30,tep,25,yr))
+ 
+                pygame.display.update()
+            
             
         pygame.display.update()
 
