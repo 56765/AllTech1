@@ -11,21 +11,53 @@ blue=(0,0,255)
 white=(255,255,255)
 black=((0,0,0))
 yellow=(255,240,6)
-x=400
-y=400
+x=100
+y=100
 
-walk=['Walk1.png','Walk2.png','walk3.png']
+
 
 while True:
-    img=pygame.image.load("cat.png")
+    img=pygame.image.load("magic1.png")
     screen.blit(img,(x, y))
     pygame.display.update()
-##    for i in walk:
-##        #screen.fill(black)
-##        print(i)
-##        img=pygame.image.load(i)
-##        screen.blit(img,(x, y))
-##        x-=10             #x=x-10
-##        pygame.display.update()
-##        time.sleep(0.5)
-##        
+    screen.fill(black)
+    time.sleep(0.1)
+
+    img=pygame.image.load("Magic2.png")
+    screen.blit(img,(x,y ))
+    pygame.display.update()
+    screen.fill(black)
+    time.sleep(0.1)
+
+    img=pygame.image.load("magic3.png")
+    screen.blit(img,(x,y ))
+    pygame.display.update()
+    screen.fill(black)
+    time.sleep(0.1)
+
+    
+    img=pygame.image.load("magic4.png")
+    screen.blit(img,(x,y ))
+    pygame.display.update()
+    screen.fill(black)
+    time.sleep(0.1)
+
+        
+    img=pygame.image.load("magic5.png")
+    screen.blit(img,(x,y ))
+    pygame.display.update()
+    screen.fill(black)
+    time.sleep(0.1)
+
+
+
+
+
+
+
+
+
+
+
+
+
