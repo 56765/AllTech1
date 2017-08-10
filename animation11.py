@@ -13,43 +13,89 @@ black=((0,0,0))
 yellow=(255,240,6)
 x=100
 y=100
+a = ["magic1.png", "Magic2.png", "magic3.png", "magic4.png", "magic5.png"]
+f = ["magic_f_1.png", "f2.png", "f3.png", "f4.png", "f5.png"]
 
-
-
+k=0
 while True:
-    img=pygame.image.load("magic1.png")
-    screen.blit(img,(x, y))
-    pygame.display.update()
-    screen.fill(black)
-    time.sleep(0.1)
+        for event in pygame.event.get():
+            if event.type==QUIT:
+                pygame.quit()
+                exit()
+            elif event.type==KEYDOWN:
 
-    img=pygame.image.load("Magic2.png")
-    screen.blit(img,(x,y ))
-    pygame.display.update()
-    screen.fill(black)
-    time.sleep(0.1)
+       
+                        
+                   
 
-    img=pygame.image.load("magic3.png")
-    screen.blit(img,(x,y ))
-    pygame.display.update()
-    screen.fill(black)
-    time.sleep(0.1)
-
-    
-    img=pygame.image.load("magic4.png")
-    screen.blit(img,(x,y ))
-    pygame.display.update()
-    screen.fill(black)
-    time.sleep(0.1)
-
+                
+                if event.key==K_d:
+                    x=x+25
+                    img=pygame.image.load(a[k])
+                    screen.blit(img,(x, y))
+                    pygame.display.update()
+                    screen.fill(black)
+                    time.sleep(0.1)
+                    k=k+1
+                    if k==5:
+                        k=0
         
-    img=pygame.image.load("magic5.png")
-    screen.blit(img,(x,y ))
-    pygame.display.update()
-    screen.fill(black)
-    time.sleep(0.1)
+                if event.key==K_a :
+                    x=x-25
+                    img=pygame.image.load(f[k])
+                    screen.blit(img,(x, y))
+                    pygame.display.update()
+                    screen.fill(black)
+                    time.sleep(0.1)
+                    k=k+1
+                    if k==5:
+                        k=0
+                if event.key==K_w :
+                    y=y-25
+                    img=pygame.image.load(f[k])
+                    screen.blit(img,(x, y))
+                    pygame.display.update()
+                    screen.fill(black)
+                    time.sleep(0.1)
+                    k=k+1
+                    if k==5:
+                        k=0
+                if event.key==K_s :
+                    y=y+25
+                    img=pygame.image.load(f[k])
+                    screen.blit(img,(x, y))
+                    pygame.display.update()
+                    screen.fill(black)
+                    time.sleep(0.1)
+                    k=k+1
+                    if k==5:
+                        k=0
+                if event.key==K_k:
+                    y=y-200
+                    img=pygame.image.load(f[k])
+                    screen.blit(img,(x, y))
+                    pygame.display.update()
+                    screen.fill(black)
+                    time.sleep(0.1)
+                    time.sleep(0.3)
+                    k=k+1
+                    if k==5:
+                        k=0
+                    y=y+200
+                    img=pygame.image.load(f[k])
+                    screen.blit(img,(x, y))
+                    pygame.display.update()
+                    screen.fill(black)
+                    time.sleep(0.1)
+                    k=k+1
+                    if k==5:
+                        k=0
+       
+       
+       
 
 
+       
 
 
 
