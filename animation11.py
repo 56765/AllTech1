@@ -19,7 +19,7 @@ key=""
 k=0
 while True:
         pygame.display.update()
-        screen.fill(black)
+        #screen.fill(black)
         for event in pygame.event.get():
             if event.type==QUIT:
                 pygame.quit()
@@ -36,41 +36,21 @@ while True:
                          key='d'
         
                 if event.key==K_a :
-                    x=x-25
-                    img=pygame.image.load(f[k])
-                    screen.blit(img,(x, y))
-##                    pygame.display.update()
-##                    screen.fill(black)
-                    time.sleep(0.1)
-                    k=k+1
-                    if k==5:
-                        k=0
+                        key='a'
+      
                 if event.key==K_w :
-                    y=y-25
-                    img=pygame.image.load(f[k])
-                    screen.blit(img,(x, y))
-##                    pygame.display.update()
-##                    screen.fill(black)
-                    time.sleep(0.1)
-                    k=k+1
-                    if k==5:
-                        k=0
+                        key='w'
+               
                 if event.key==K_s :
-                    y=y+25
-                    img=pygame.image.load(f[k])
-                    screen.blit(img,(x, y))
-##                    pygame.display.update()
-##                    screen.fill(black)
-                    time.sleep(0.1)
-                    k=k+1
-                    if k==5:
-                        k=0
+                        key='s'
+       
                 if event.key==K_k:
                     y=y-200
                     img=pygame.image.load(f[k])
+                    screen.fill(black)
                     screen.blit(img,(x, y))
-##                    pygame.display.update()
-##                    screen.fill(black)
+                    pygame.display.update()
+                    
                     time.sleep(0.1)
                     time.sleep(0.3)
                     k=k+1
@@ -78,9 +58,10 @@ while True:
                         k=0
                     y=y+200
                     img=pygame.image.load(f[k])
+                    screen.fill(black)
                     screen.blit(img,(x, y))
-##                    pygame.display.update()
-##                    screen.fill(black)
+                    pygame.display.update()
+                   
                     time.sleep(0.1)
                     k=k+1
                     if k==5:
@@ -88,28 +69,83 @@ while True:
                 
        
         if key=="n":
-            img=pygame.image.load('bullet.png')
-            screen.blit(img,(x,y-5))
+            img1=pygame.image.load('bullet.png')
+            screen.fill(black)
+           
+            screen.blit(img1,(x,y-5))
             pygame.display.update()
                         
             k=k+1
-            if k==5:
-                k==0
+            
+        if k>=5:
+            k=0
 
         if key=="d":
             x=x+25
             img=pygame.image.load(a[k])
+            
+            screen.fill(black)
+            screen.blit(img1,(x,y-5))
             screen.blit(img,(x, y))
-##                    pygame.display.update()
-##                    screen.fill(black)
+    
+            pygame.display.update()
+         
+            time.sleep(0.1)
+            k=k+1
+            if k>=5:
+                k=0
+        if key=="a":
+            x=x-25
+            img=pygame.image.load(f[k])
+            screen.fill(black)
+
+            screen.blit(img1,(x,y-5))
+            screen.blit(img,(x, y))
+        
+        
+            pygame.display.update()
+         
             time.sleep(0.1)
             k=k+1
             if k==5:
                 k=0
+        if key=="w":
+            screen.fill(black)  
+            y=y-25
+            img=pygame.image.load(f[k])
+            screen.fill(black)
+          
+            screen.blit(img,(x, y))
+      
+            pygame.display.update()
+        
+            time.sleep(0.1)
+            k=k+1
+            if k==5:
+                k=0
+        if key=="s":
+                   
+            y=y+25
+            img=pygame.image.load(f[k])
+            screen.fill(black)
+          
+            screen.blit(img,(x, y))
+            pygame.display.update()
+            
+            time.sleep(0.1)
+            k=k+1
+            if k==5:
+                k=0
+        print(k)
 
 
-       
-             
+
+
+
+
+
+
+  
 
 
 
@@ -119,5 +155,4 @@ while True:
 
 
 
-
-
+                        
