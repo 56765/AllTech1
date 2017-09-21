@@ -1,33 +1,45 @@
 
-class ShoppingList:
-    def __init__(self,money):
-        self.money=money
-        self.Shopping_List={}
+class SuperMarket:
+    def __init__(self):
+ 
+        self.Super_Market={}
 
-    def additem(self,item,price):
-        self.Shopping_List[item]=price
-        self.money=self.money-price
+    def addgrocery(self,item,price):
+        self.Super_Market[item]=price
         
 
-    def remitem(self,item):
-        self.money=self.money+ShoppingList[item]
-        del self.Shopping_List[item]
+    def remnumber(self,name):
+        if name in self.Phone_Book:
+
+        
+            
+            del self.Phone_Book[name]
+        else:
+            print('no such number in the phone book')
     def show(self):
-        print(self.money,self.Shopping_List)
+        print(self.Phone_Book)
+
+    def find_number(self):
+        x=input('whose number do you want to know?')
+        if x in self.Phone_Book:
+            
+            print(self.Phone_Book[x])
+        else:
+            print('That phone number is not found')
         
-shop=ShoppingList(100)
-shop.additem('grapes',10)
-shop.show()
-shop.additem('oranges',10)
-shop.show()
-shop.additem('bananas',10)
-shop.show()
-shop.additem('apples',10)
-shop.show()
-shop.additem('lemons',10)
-shop.show()
-shop.remitem('grapes')
-shop.show()
+phonebook=PhoneBook()
+
+phonebook.addnumber(576031748,'a')
+phonebook.show()
+phonebook.addnumber(7892540275,'b')
+phonebook.show()
+phonebook.addnumber(7892540275,'d')
+phonebook.show()
+phonebook.remnumber('c')
+phonebook.show()
+phonebook.remnumber('b')
+phonebook.show()
+phonebook.find_number()
 
 
 
